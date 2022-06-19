@@ -6,11 +6,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/dhawton/log4g"
 	kzdvTypes "github.com/kzdv/types/database"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+	"hawton.dev/log4g"
 )
 
 var DB *gorm.DB

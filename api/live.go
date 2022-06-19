@@ -36,5 +36,9 @@ func GetLive(c *gin.Context) {
 		retFlights = append(retFlights, Flightsv1(flights[i]))
 	}
 
-	c.JSON(http.StatusOK, retFlights)
+	if c.GetHeader("Accept") == "application/yaml" {
+		c.YAML(http.StatusOK, retFlights)
+	} else {
+		c.JSON(http.StatusOK, retFlights)
+	}
 }
