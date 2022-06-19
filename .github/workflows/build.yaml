@@ -12,7 +12,7 @@ on:
 env:
   SERVICE_NAME: api
 
-job:
+jobs:
   build:
     name: Build Image
     runs-on: ubuntu-latest
