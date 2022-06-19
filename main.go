@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/kzdv/overflight-api/database"
 
-	"github.com/dhawton/log4g"
+	"hawton.dev/log4g"
 )
 
 var log = log4g.Category("main")
@@ -41,7 +41,7 @@ func main() {
 	}
 
 	log.Info("Connecting to database and handling migrations")
-	database.Connect(Getenv("DB_USERNAME", "root"), Getenv("DB_PASSWORD", "secret"), Getenv("DB_HOSTNAME", "localhost"), Getenv("DB_PORT", "3306"), Getenv("DB_DATABASE", "zdv"))
+	database.Connect(Getenv("DB_USERNAME", "root"), Getenv("DB_PASSWORD", "secret"), Getenv("DB_HOST", "localhost"), Getenv("DB_PORT", "3306"), Getenv("DB_DATABASE", "zdv"))
 
 	log.Info("Configuring gin webserver")
 	server := NewServer(appenv)
